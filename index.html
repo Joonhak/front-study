@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+        <title>Hello World</title>
+              
+        <link href="https://fonts.googleapis.com/css?family=Hi+Melody|Open+Sans&amp;subset=korean" rel="stylesheet">
+        <link href="./normalize.css" rel="stylesheet"/>
+        <link href="./main.css" rel="stylesheet"/>
+
+        <style type="text/css">
+            .main-header::before {
+                content: '';
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+            .header-hamburger {
+                float: left;
+            }
+            .header-menu {
+                float: right;
+            }
+            .main {
+                color: #000000;
+                background-color: #FFFFFF;
+                border-radius: .5rem;
+                text-align: center;
+                box-shadow: 0 0 6px 0 hsla(0, 0%, 0%, .3);
+                margin-bottom: 3rem;
+            }
+            .about-images {
+                position: relative;
+                margin-bottom: 100px;
+            }
+            .content:not(.active) {
+                display: none;
+            }
+            .post-list {
+                max-width: 900px;
+                margin: 3rem auto 1rem;
+            }
+            .post-item {
+                text-align: left;
+            }
+            
+            .post-preview {
+                max-height: 55px;
+                margin: .7rem 0;
+                line-height: 26px;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-box-orient: vertical;
+                word-wrap: break-word;
+                display: -webkit-box;
+            }
+            footer {
+                min-height: 5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- Nav -->
+            <nav class="main-header clearfix">
+                <div class="header-hamburger">
+                    
+                </div>
+                <div class="header-brand">
+                    <h1>BLOG</h1>
+                </div>
+                <div class="header-menu">
+
+                </div>
+            </nav>
+            <!-- /Nav -->
+
+            <!-- Main Contents -->
+            <div class="main">
+                <nav id="content-nav" class="">
+                    <div>
+                        <a class="nav-item" href="#about">About</a>
+                    </div>
+                    <div>
+                        <a class="nav-item active" href="#blog">Blog</a>
+                    </div>
+                    <div>
+                        <a class="nav-item" href="#portfolio">Portfolio</a>
+                    </div>
+                    <div>
+                        <a class="nav-item" href="#contact">Contact</a>
+                    </div>
+                </nav>
+
+                <div id="about" class="content">
+                    <div class="about-images">
+                        <picture>
+                            <source srcset="https://placeimg.com/1200/350/nature" media="(min-width: 768px)">
+                            <source srcset="https://placeimg.com/340/250/nature">
+                            <img class="profile-background" src="https://placeimg.com/1200/350/nature" alt="profile background image">
+                        </picture>
+                        <!-- Circled image -->
+                        <img class="profile-image" src="https://placeimg.com/200/200/animals" alt="profile image">
+                        <!-- Circled image -->
+                    </div>
+                    <span class="separate-line">
+                        separate line
+                    </span>
+                    <div class="about-content">
+                        Code by Joonhak LEE
+                    </div>
+                </div>
+
+                <div id="blog" class="content active">
+                    <div class="container">
+                        <ul class="post-list">
+                            <li>
+                                <div class="post-item">
+                                    <!-- Thumbnail image -->
+                                    <img class="post-thumbnail" src="https://placeimg.com/200/200/nature" alt="Third slide">
+                                    <!-- /Thumbnail image -->
+                                    <div class="post-desc">
+                                        <h1>Post Title</h1>
+                                        <span>category  &bull;  2018-12-01</span>
+                                        <p class="post-preview">
+                                            nullable님의 회원 가입을 진심으로 축하합니다. 이 글은 비공개로 작성돼 있습니다.
+                                            '편집'으로 내용을 바꾸시거나, 삭제 후 '새 글을 작성'하셔도 됩니다.
+                                            블로그를 간단하게 소개하는 글로 편집해보는 것도 좋겠네요.
+                                            티스토리에 있는 다양한 '스킨'도 살펴 보세요. 
+                                            블로그나 사이트를 사용하는 목적에 맞게 스킨을 고를 수 있습니다. 
+                                            어떤 이야기를 주로 하실 건가요? 잘 생각해 보시고, 마음에 드는 스킨을 고르세요.
+                                            '스킨 커버 편집'을 간단히 하면 멋진 첫 화면을 가질 수 있으니 한 번 해보는 것도 좋겠네요
+                                        </p>
+                                        <button class="btn read-more">Read more</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                            
+                            </li>
+                            <li>
+                            
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="portfolio" class="content">
+                    <h1> PORTFOLIO </h1>
+                </div>
+
+                <div id="contact" class="content">
+                    <h1> CONTACT </h1>
+                </div>
+            </div>
+            <!-- /Main Contents -->
+
+            <!-- Footer -->
+            <footer>
+
+            </footer>
+            <!-- /Footer -->
+        </div>
+
+        <!-- Bottom fixed menu -->
+        <nav id="bottom-menu">
+            <div>
+                <a class="menu-item" href="#about">About</a>
+            </div>
+            <div>
+                <a class="menu-item active" href="#blog">Blog</a>
+            </div>
+            <div>
+                <a class="menu-item" href="#portfolio">Portfolio</a>
+            </div>
+            <div>
+                <a class="menu-item" href="#contact">Contact</a>
+            </div>
+        </nav>
+        <!-- /Bottom fixed menu -->
+
+        <script type="text/javascript">
+            
+            if (document.addEventListener) {
+                document.addEventListener("DOMContentLoaded", function () {
+                    document.removeEventListener("DOMContentLoaded", arguments.callee, false);
+                    domReady();
+                }, false);
+
+
+            } else if (document.attachEvent) {
+                document.attachEvent("onreadystatechange", function () {
+                    if (document.readyState === "complete") {
+                        document.detachEvent("onreadystatechange", arguments.callee);
+                        domReady();
+                    }
+                });
+            }
+
+            function domReady() {
+                var menuList = getElementByMultiClass('nav-item, menu-item');
+                for ( var i = 0; i < menuList.length; i++ ) {
+                    toggleActiveClass(menuList[i]);
+                }
+            }
+
+            function getElementByMultiClass(selector) {
+                var selectorList = selector.split(',')
+                var nodeList = [];
+                for ( var i = 0; i < selectorList.length; i++ ) {
+                    var arr = document.getElementsByClassName( selectorList[i].trim() );
+                    for ( var j = 0; j < arr.length; j++ ) {
+                        nodeList.push( arr[j] );
+                    }
+                }
+                return nodeList;
+            }
+            
+            function toggleActiveClass(elem) {
+                elem.addEventListener('click', function(event) {
+                    
+                    var activeElements = document.getElementsByClassName('active');
+
+                    var length = activeElements.length;
+                    for ( var i = 0, j = 0; i < length; i++ ) {
+                        console.log(activeElements[j].tagName === "DIV");
+                        console.log(activeElements[j].tagName);
+                        removeActiveClass(activeElements[j]);
+                    }
+                    
+                    addActiveClass(this);
+                });
+            }
+
+            function removeActiveClass(elem) {
+                var classList = getClassList(elem);
+                var activeIndex = classList.indexOf('active');
+                classList.splice( activeIndex );
+                elem.setAttribute('class', classList.join(' '));
+            }
+
+            function getClassList(elem) {
+                return elem.getAttribute('class').split(' ');
+            }
+
+            function addActiveClass(elem) {
+                elem.className += ' active';
+                var elemToShow = document.getElementById( elem.getAttribute('href').substring(1) );
+                elemToShow.className += ' active';
+                
+            }
+        </script>
+    </body>
+</html>

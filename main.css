@@ -1,0 +1,182 @@
+body {
+  background-color: #1fc8db;
+  background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  color: white;
+}
+
+#wrapper {
+  max-width: 1400px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  border: 1px solid rgba(0, 0, 0, .3);
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+.container {
+  padding-top: 1px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.main-header {
+  padding: 10px;
+  text-align: center;
+}
+
+.main-header div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.profile-image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+  bottom: -100px;
+}
+
+.separate-line {
+  color: transparent;
+}
+
+.separate-line::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 2px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+}
+
+/* 
+    ##Device = Laptops, Desktops
+    ##Screen = 1025px to ~
+  */
+@media (min-width: 1025px) {
+  .content.active {
+    padding: 0 5rem 3rem;
+  }
+  .post-desc {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 70%;
+  }
+  .post-thumbnail {
+    max-width: 30%;
+    margin-right: 5%;
+  }
+}
+
+/*
+    ##Device = Laptops, Desktops, Tablets, Ipads
+    ##Screen = 768px to ~
+  */
+@media (min-width: 768px) {
+  .main-header {
+    height: 20vh;
+    min-height: 450px;
+  }
+  .content.active {
+    padding: 0 4rem 2.5rem;
+  }
+  #bottom-menu {
+    display: none;
+  }
+  #content-nav {
+    padding: .5rem;
+    background-color: #F7F7F7;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+  }
+  #content-nav div {
+    margin: 0 .5rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  #content-nav div a {
+    display: inline-block;
+    border-radius: .5rem;
+    padding: 1.5rem 2rem;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #636363;
+  }
+  #content-nav div a.active {
+    background-color: #FFFFFF;
+  }
+}
+
+/* 
+    ##Device = Tablets, Ipads
+    ##Screen = 768px to 1025px
+  */
+@media (min-width: 768px) and (max-width: 1025px) {
+  .post-desc {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 63%;
+  }
+  .post-thumbnail {
+    max-width: 35%;
+    margin-right: 2%;
+  }
+}
+
+/* 
+    ##Device = Most of the Smartphones Mobiles 
+    ##Screen = B/w 320px to 479px
+  */
+@media (min-width: 320px) and (max-width: 767px) {
+  .main-header {
+    height: 15vh;
+    min-height: 130px;
+  }
+  .content.active {
+    padding: 0 2rem 1rem;
+  }
+  #content-nav {
+    display: none;
+  }
+  #bottom-menu {
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: .5rem;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    z-index: 1001;
+    text-align: center;
+  }
+  #bottom-menu div {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  #bottom-menu div a {
+    display: inline-block;
+    border-radius: .5rem;
+    padding: 1.5rem 1.3rem;
+    line-height: 1rem;
+    font-size: 1rem;
+    color: #636363;
+  }
+  #bottom-menu div a.active {
+    background-color: #F7F7F7;
+  }
+}
