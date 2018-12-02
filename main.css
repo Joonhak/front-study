@@ -96,6 +96,7 @@ a:hover, a:focus {
   height: 2px;
   border-radius: 50%;
   margin: 0 auto 1rem;
+  background-color: #a89cc8;
   background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
 }
 
@@ -125,13 +126,13 @@ a:hover, a:focus {
 }
 
 #post-category {
-  float: right;
+  float: left;
   margin-top: 1rem;
   padding: 1rem;
   cursor: pointer;
 }
 
-#post-category::before {
+#post-category::after {
   content: '⇣ ';
 }
 
@@ -150,7 +151,7 @@ a:hover, a:focus {
   opacity: 1;
   position: absolute;
   top: 4rem;
-  right: 0;
+  left: 0;
   padding: 1rem;
   z-index: 1003;
   text-align: left;

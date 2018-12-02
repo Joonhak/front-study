@@ -35,7 +35,7 @@ window.textAnimation = function(elem) {
                 
                 _this.timer = setInterval(function(){
                     _this.setHtml(_this.state());
-                }, 300);
+                }, 200);
             }
         }
         textAnimate.init(data);
