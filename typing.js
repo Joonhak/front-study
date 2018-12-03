@@ -1,4 +1,4 @@
-window.textAnimation = function(elem) {
+window.typing = function(elem) {
     var data = {
         // element for this animation
         elem : elem,
@@ -6,7 +6,7 @@ window.textAnimation = function(elem) {
         text : elem.innerText,
     }
     return (function(data) {
-        var textAnimate = {
+        var typing = {
             index: 0,
             str : '',
             timer: null,
@@ -38,6 +38,6 @@ window.textAnimation = function(elem) {
                 }, 200);
             }
         }
-        textAnimate.init(data);
+        typing.init(data);
     })(data);
 }
