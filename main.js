@@ -6,7 +6,7 @@
         'font-size: 5rem',
         'font-weight: 700'
     ].join(';');
-    console.log("%c Hello World!", style);
+    setTimeout(console.log.bind(console,"%c Hello World!", style), 0);
 }());
 
 function afterDocumentReady(fn) {
@@ -17,20 +17,19 @@ function afterDocumentReady(fn) {
     }, false);
 }
 
-function addClass( elem, className, fn ) {
-    elem.classList += (' ' + className);
-    if ( fn && typeof fn === 'function' ) {
-        fn(elem);
-    }
+function addClass( elem, className ) {
+    elem.classList += ' ' + className;
+    return elem;
 }
 
-function removeClass( elem, className, fn ) {
+function removeClass( elem, className ) {
     var classList = getClassList(elem),
         classIndex = classList.indexOf( className );
     if ( classIndex > -1 ) {
         classList.splice( classIndex );
         elem.classList = classList.join(' ');
     }
+    return elem;
 }
 
 function getClassList(elem) {
@@ -43,9 +42,9 @@ function getClassList(elem) {
 }
 
 function toggleActiveClass(e) {
-    var elemToShowOrNot = document.getElementById('category-list');
-    var classList = getClassList( elemToShowOrNot );
-    var activeIndex = classList.length ? classList.indexOf('active') : -1;
+    var elemToShowOrNot = document.getElementById('category-list')
+        , classList = getClassList( elemToShowOrNot )
+        , activeIndex = classList.length ? classList.indexOf('active') : -1;
 
     if ( activeIndex > -1 ) {
         classList.splice( activeIndex )
@@ -56,23 +55,10 @@ function toggleActiveClass(e) {
     }
 }
 
-function changeMaxWidth( href ) {
-    var isPortfolio = href === '#portfolio';
-    var wrapper = document.getElementById('wrapper');
-    var maxWidth = wrapper.style.maxWidth;
-    if ( isPortfolio && !maxWidth || isPortfolio && maxWidth === '1400px' ) {
-        var isExtened = getClassList(wrapper).indexOf('extended') > -1;
-        if ( !isExtened ) {
-            addClass(wrapper, 'extended');
-        }
-    } else {
-        removeClass(wrapper, 'extended')
-    }
-}
-
 function getElementByMultiClass(selector) {
     var selectorList = selector.split(',')
-    var nodeList = [];
+        , nodeList = [];
+
     for ( var i = 0; i < selectorList.length; i++ ) {
         var arr = document.getElementsByClassName( selectorList[i].trim() );
         for ( var j = 0; j < arr.length; j++ ) {
@@ -82,12 +68,14 @@ function getElementByMultiClass(selector) {
     return nodeList;
 }
 
-function addToggleActiveEvent(elem) {
-    elem.addEventListener('click', function(event) {
+function addMenuClickEvent(elem) {
+    elem.addEventListener('click', function(e) {
+        e.preventDefault();
         var activeElements = document.getElementsByClassName('active')
             , length = activeElements.length
-            , classNames = this.className;
-        
+            , classNames = this.className
+            , elemToShow = document.getElementById( this.getAttribute('href').substring(1) );
+
         for ( var i = 0, j = 0; i < length; i++ ) {
             var isSameClass = activeElements[j].className.indexOf(classNames) > -1;
             if ( activeElements[j].tagName === 'DIV' || isSameClass ) { // tagName === 'DIV' ? contents : nav- or menu-item
@@ -96,11 +84,22 @@ function addToggleActiveEvent(elem) {
                 j++;
             }
         }
-        addClass( this, 'active', function(elem) {
-            var elemToShow = document.getElementById( elem.getAttribute('href').substring(1) );
-            addClass(elemToShow, 'active');
-        });
+        
+        addClass( this, 'active');
+        addClass( elemToShow, 'active' );
 
         changeMaxWidth( elem.getAttribute('href') );
     });
+}
+
+function changeMaxWidth( href ) {
+    var isPortfolio = href === '#portfolio'
+        , wrapper = document.getElementById('wrapper')
+        , isExtened = getClassList(wrapper).indexOf('extended') > -1;
+
+    if ( isPortfolio && !isExtened ) {
+        addClass(wrapper, 'extended');
+    } else if ( !isPortfolio ) {
+        removeClass(wrapper, 'extended')
+    }
 }

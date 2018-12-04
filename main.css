@@ -132,7 +132,7 @@ a:hover, a:focus {
 
 #category-list {
   opacity: 0;
-  z-index: 0;
+  z-index: -1;
   position: absolute;
   top: 4rem;
   left: 0;
@@ -141,11 +141,11 @@ a:hover, a:focus {
   box-shadow: 0 0 6px 0 hsla(0, 0%, 0%, .3);
   border-radius: .5rem;
   background-color: #FFFFFF;
-  -webkit-transition: opacity .2s ease-in;
-  -moz-transition: opacity .2s ease-in;
-  -o-transition: opacity .2s ease-in;
-  -ms-transition: opacity .2s ease-in;
-  transition: opacity .2s ease-in;
+  -webkit-transition: opacity .2s linear, z-index .1s linear;
+  -moz-transition: opacity .2s linear, z-index .1s linear;
+  -o-transition: opacity .2s linear, z-index .1s linear;
+  -ms-transition: opacity .2s linear, z-index .1s linear;
+  transition: opacity .2s linear, z-index .1s linear;
 }
 
 #category-list.active {
@@ -225,6 +225,40 @@ a:hover, a:focus {
   opacity: 1;
 }
 
+.project-list {
+  margin-top: 3rem;
+}
+
+.project-item,
+.project-image,
+.thumbnail {
+  display: inline-block;
+}
+
+.project-image {
+  overflow: hidden;
+}
+
+.thumbnail {
+  width: 100%;
+  max-width: 550px;
+  -webkit-transition: transform .2s;
+  -moz-transition: transform .2s;
+  -o-transition: transform .2s;
+  -ms-transition: transform .2s;
+  transition: transform .2s;
+}
+
+.thumbnail:hover {
+  width: 100%;
+  max-width: 550px;
+  transform: scale(1.03);
+}
+
+.project-name {
+  font-size: 1.5rem;
+}
+
 /* 
     ##Device = Laptops, Desktops
     ##Screen = 1025px to ~
@@ -253,9 +287,6 @@ a:hover, a:focus {
   .main-header {
     height: 20vh;
     min-height: 450px;
-  }
-  .content.active {
-    padding: 1px 4rem 2.5rem;
   }
   #bottom-menu {
     display: none;
@@ -297,13 +328,19 @@ a:hover, a:focus {
     -webkit-box-orient: vertical;
     display: -webkit-box;
   }
+  .project-item {
+    width: 32%;
+  }
 }
 
 /* 
     ##Device = Tablets, Ipads
     ##Screen = 768px to 1025px
   */
-@media (min-width: 768px) and (max-width: 1025px) {
+@media (max-width: 1025px) and (min-width: 768px) {
+  .content.active {
+    padding: 1px 3rem 2.5rem;
+  }
   .post-desc {
     display: inline-block;
     vertical-align: top;
@@ -320,13 +357,13 @@ a:hover, a:focus {
     ##Device = Most of the Smartphones Mobiles 
     ##Screen = B/w 320px to 479px
   */
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .main-header {
     height: 15vh;
     min-height: 130px;
   }
   .content.active {
-    padding: 1px 2rem 1rem;
+    padding: 1px 1rem 1rem;
   }
   #content-nav {
     display: none;

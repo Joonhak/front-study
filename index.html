@@ -178,10 +178,66 @@
                 </div>
 
                 <div id="portfolio" class="content active">
-                    <h1> Projects </h1>
+                    <div class="project-list">
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img class="thumbnail" src="https://placeimg.com/550/300/animals">
+                            </div>
+                            <div class="project-desc">
+                                <h1 class="project-name">Project Name</h1>
+                                <p>Simple Description For This Project</p>
+                            </div>
+                        </div>
 
-                    <div class="portfolio-item">
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img class="thumbnail" src="https://placeimg.com/550/300/nature">
+                            </div>
+                            <div class="project-desc">
+                                <h1 class="project-name">Project Name</h1>
+                                <p>Simple Description For This Project</p>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img class="thumbnail" src="https://placeimg.com/550/300/people">
+                            </div>
+                            <div class="project-desc">
+                                <h1 class="project-name">Project Name</h1>
+                                <p>Simple Description For This Project</p>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img class="thumbnail" src="https://placeimg.com/550/300/people">
+                            </div>
+                            <div class="project-desc">
+                                <h1 class="project-name">Project Name</h1>
+                                <p>Simple Description For This Project</p>
+                            </div>
+                        </div>
                         
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img class="thumbnail" src="https://placeimg.com/550/300/animals">
+                            </div>
+                            <div class="project-desc">
+                                <h1 class="project-name">Project Name</h1>
+                                <p>Simple Description For This Project</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img class="thumbnail" src="https://placeimg.com/550/300/nature">
+                            </div>
+                            <div class="project-desc">
+                                <h1 class="project-name">Project Name</h1>
+                                <p>Simple Description For This Project</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -217,15 +273,11 @@
         <script type="text/javascript" src="typing.js"></script>
         <script type="text/javascript">
             afterDocumentReady(function() {
-                HTMLElement.prototype.sayHi = function() {
-                    console.log('Hi!');
-                }
-
                 typing( document.getElementById('header-title') );
 
                 var menuList = getElementByMultiClass('nav-item, menu-item');
                 for ( var i = 0; i < menuList.length; i++ ) {
-                    addToggleActiveEvent(menuList[i]);
+                    addMenuClickEvent(menuList[i]);
                 }
                 document.getElementById('post-category').addEventListener('click', toggleActiveClass);
                 document.getElementById('background').addEventListener('click', toggleActiveClass);
