@@ -279,14 +279,11 @@
         <script type="text/javascript" src="typing.js"></script>
         <script type="text/javascript">
             afterDocumentReady(function() {
-                typing( document.getElementById('header-title') );
-
-                var menuList = getElementByMultiClass('nav-item, menu-item');
-                for ( var i = 0; i < menuList.length; i++ ) {
-                    addMenuClickEvent(menuList[i]);
-                }
-                document.getElementById('post-category').addEventListener('click', toggleActiveClass);
-                document.getElementById('background').addEventListener('click', toggleActiveClass);
+                typing( document.querySelector('#header-title') );
+                
+                addMenuClickEvent( document.querySelectorAll('.nav-item, .menu-item') );
+                document.querySelector('#post-category').addEventListener('click', toggleActiveClass);
+                document.querySelector('#background').addEventListener('click', toggleActiveClass);
             });
         </script>
     </body>

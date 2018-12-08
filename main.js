@@ -18,7 +18,7 @@ function afterDocumentReady(fn) {
 }
 
 function addClass( elem, className ) {
-    elem.classList += ' ' + className;
+    elem.className += ' ' + className;
     return elem;
 }
 
@@ -27,13 +27,13 @@ function removeClass( elem, className ) {
         classIndex = classList.indexOf( className );
     if ( classIndex > -1 ) {
         classList.splice( classIndex );
-        elem.classList = classList.join(' ');
+        elem.className = classList.join(' ');
     }
     return elem;
 }
 
 function getClassList(elem) {
-    var classStr = elem.getAttribute('class');
+    var classStr = elem.className;
     if ( classStr ) {
         return classStr.split(' ');
     } else  {
@@ -55,46 +55,32 @@ function toggleActiveClass(e) {
     }
 }
 
-function getElementByMultiClass(selector) {
-    var selectorList = selector.split(',')
-        , nodeList = [];
-
-    for ( var i = 0; i < selectorList.length; i++ ) {
-        var arr = document.getElementsByClassName( selectorList[i].trim() );
-        for ( var j = 0; j < arr.length; j++ ) {
-            nodeList.push( arr[j] );
-        }
-    }
-    return nodeList;
-}
-
-function addMenuClickEvent(elem) {
-    elem.addEventListener('click', function(e) {
-        e.preventDefault();
-        var activeElements = document.getElementsByClassName('active')
-            , length = activeElements.length
-            , classNames = this.className
-            , elemToShow = document.getElementById( this.getAttribute('href').substring(1) );
-
-        for ( var i = 0, j = 0; i < length; i++ ) {
-            var isSameClass = activeElements[j].className.indexOf(classNames) > -1;
-            if ( activeElements[j].tagName === 'DIV' || isSameClass ) { // tagName === 'DIV' ? contents : nav- or menu-item
-                removeClass(activeElements[j], 'active');
-            } else {
-                j++;
+function addMenuClickEvent(elemList) {
+    for ( var i = 0; i < elemList.length; i++) {
+        elemList[i].addEventListener('click', function(e) {
+            e.preventDefault();
+            var activeElements = document.querySelectorAll('.active')
+                , length = activeElements.length
+                , className = this.className // When this element is not have 'active' class, then it has only one class.
+                , elemToShow = document.querySelector( this.getAttribute('href') );
+            
+            for ( var j = 0; j < length; j++ ) {
+                var isSameClass = activeElements[j].getAttribute('class').indexOf(className) > -1;
+                if ( activeElements[j].tagName === 'DIV' || isSameClass ) {
+                    removeClass( activeElements[j], 'active' );
+                }
             }
-        }
-        
-        addClass( this, 'active');
-        addClass( elemToShow, 'active' );
-
-        changeMaxWidth( elem.getAttribute('href') );
-    });
+            
+            addClass( this, 'active');
+            addClass( elemToShow, 'active' );        
+            changeMaxWidth( this.getAttribute('href') );
+        });
+    }
 }
 
 function changeMaxWidth( href ) {
     var isPortfolio = href === '#portfolio'
-        , wrapper = document.getElementById('wrapper')
+        , wrapper = document.querySelector('#wrapper')
         , isExtened = getClassList(wrapper).indexOf('extended') > -1;
 
     if ( isPortfolio && !isExtened ) {
