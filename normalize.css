@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Hi+Melody|Karla&subset=korean');
+@import url('https://fonts.googleapis.com/css?family=Gamja+Flower|Karla&subset=korean');
 * {
 box-sizing: border-box;
 }
@@ -10,7 +10,7 @@ overflow: auto;
 html {
 line-height: 1.15;
 -webkit-text-size-adjust: 100%;
-font-family: 'Karla', 'Hi Melody', sans-serif, cursive;
+font-family: 'Karla', 'Gamja Flower', cursive;
 }
 
 body {

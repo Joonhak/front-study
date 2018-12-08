@@ -3,43 +3,37 @@ body {
   background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
   color: white;
 }
-
 a:link, a:visited {
   color: inherit;
 }
-
 a:hover, a:focus {
   color: #2cb5e8;
 }
-
 #header-title {
   display: inline-block;
 }
-
 @keyframes blink {
-  0% { opacity: .1; }
+  0% { opacity: 0; }
+  50% { opacity: .5; }
   100% { opacity: 1; }
 }
-
 @-webkit-keyframes blink {
-  0% { opacity: .1; }
+  0% { opacity: 0; }
+  50% { opacity: .5; }
   100% { opacity: 1; }
 }
-
 .blink {
   display: inline-block;
   font-size: 2em;
   color: #F1F1F1;
-  animation: blink .8s ease-in infinite;
-  -moz-animation: blink .8s ease-in infinite;
-  -o-animation: blink .8s ease-in infinite;
-  -webkit-animation: blink .8s ease-in infinite;
+  animation: blink .8s linear infinite;
+  -moz-animation: blink .8s linear infinite;
+  -o-animation: blink .8s linear infinite;
+  -webkit-animation: blink .8s linear infinite;
 }
-
 .blink::after {
   content: '|';
 }
-
 #wrapper {
   max-width: 1400px;
   padding-left: 10px;
@@ -51,11 +45,9 @@ a:hover, a:focus {
   -ms-transition: max-width .35s linear;
   transition: max-width .35s linear;
 }
-
 #wrapper.extended {
   max-width: 100%;
 }
-
 .btn {
   cursor: pointer;
   padding: .5rem .75rem;
@@ -64,46 +56,38 @@ a:hover, a:focus {
   background-color: #FFFFFF;
   text-align: center;
 }
-
 .container {
   padding-top: 1px;
   max-width: 1140px;
   margin: 0 auto;
 }
-
 #blog > .container {
   position: relative;
 }
-
 .text-wrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
 .clearfix::after {
   content: '';
   clear: both;
   display: block;
 }
-
 .main-header {
   padding: 10px 0;
   text-align: center;
 }
-
 .main-header::before {
   content: '';
   display: inline-block;
   height: 100%;
   vertical-align: middle;
 }
-
 .main-header div {
   display: inline-block;
   vertical-align: middle;
 }
-
 .main {
   color: #000000;
   background-color: #FFFFFF;
@@ -112,7 +96,6 @@ a:hover, a:focus {
   box-shadow: 0 0 6px 0 hsla(0, 0%, 0%, .3);
   margin-bottom: 3rem;
 }
-
 .profile-image {
   position: absolute;
   left: 0;
@@ -122,11 +105,9 @@ a:hover, a:focus {
   bottom: -100px;
   margin-bottom: 0px;
 }
-
 .separate-line {
   color: transparent;
 }
-
 .separate-line::after {
   content: '';
   display: block;
@@ -137,27 +118,22 @@ a:hover, a:focus {
   background-color: #a89cc8;
   background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
 }
-
 .about-images {
   position: relative;
   margin-bottom: 100px;
 }
-
 .content:not(.active) {
   display: none;
 }
-
 #post-category {
   float: left;
   margin-top: 1rem;
   padding: 1rem;
   cursor: pointer;
 }
-
 #post-category::after {
   content: '⇣ ';
 }
-
 #category-list {
   opacity: 0;
   z-index: -1;
@@ -175,16 +151,13 @@ a:hover, a:focus {
   -ms-transition: opacity .2s linear, z-index .1s linear;
   transition: opacity .2s linear, z-index .1s linear;
 }
-
 #category-list.active {
   opacity: 1;
   z-index: 1003;
 }
-
 #category-list:not(.active) + #background {
   display: none;
 }
-
 #category-list.active + #background {
   /* z-index: 1002; */
   position: fixed;
@@ -196,49 +169,39 @@ a:hover, a:focus {
   min-height: 100vh;
   background-color: transparent;
 }
-
 #category-list ul {
   margin: 0;
 }
-
 #category-list ul li {
   position: relative;
   font-size: 1.1rem;
   padding: 12px 10px;
 }
-
 #category-list ul li span {
   position: absolute;
   right: 0;
 }
-
 .post-list {
   padding-bottom: 1px;
   max-width: 900px;
   margin: 5rem auto 0;
 }
-
 .post-list li {
   margin-bottom: 3rem;
 }
-
 .post-item {
   text-align: left;
 }
-
 .post-preview {
   color: #606060;
 }
-
 .post-preview:hover {
   color: #000000;
 }
-
 #load-more {
   cursor: pointer;
   padding: 1rem 0;
 }
-
 #load-more span::before {
   opacity: 0;
   content: '⇣ ';
@@ -248,25 +211,20 @@ a:hover, a:focus {
   -ms-transition: opacity .2s ease-in;
   transition: opacity .2s ease-in;
 }
-
 #load-more:hover span::before {
   opacity: 1;
 }
-
 .project-list {
   margin-top: 3rem;
 }
-
 .project-item,
 .project-image,
 .thumbnail {
   display: inline-block;
 }
-
 .project-image {
   overflow: hidden;
 }
-
 .thumbnail {
   width: 100%;
   max-width: 550px;
@@ -276,17 +234,48 @@ a:hover, a:focus {
   -ms-transition: transform .2s;
   transition: transform .2s;
 }
-
 .thumbnail:hover {
   width: 100%;
   max-width: 550px;
   transform: scale(1.03);
 }
-
 .project-name {
   font-size: 1.5rem;
 }
-
+.comment {
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, .2);
+  margin-bottom: 1rem;
+}
+.comment-list {
+  text-align: left;
+}
+.guest-image {
+  border-radius: 50%;
+  float: left;
+}
+.guest-desc {
+  margin-top: .5rem;
+}
+.guest-desc .guest-name,
+.guest-desc .write-date {
+  display: inline-block;
+  line-height: 1.3rem;
+  vertical-align: top;
+}
+.secret .write-date {
+  max-width: 100%;
+}
+.guest-name {
+  font-weight: bold;
+  max-width: 45%;
+}
+.write-date {
+  font-size: 12px;
+  color: #606060;
+  max-width: 50%;
+}
 /* 
     ##Device = Laptops, Desktops
     ##Screen = 1025px to ~
@@ -306,7 +295,6 @@ a:hover, a:focus {
     display: inline-block;
   }
 }
-
 /*
     ##Device = Laptops, Desktops, Tablets, Ipads
     ##Screen = 768px to ~
@@ -359,8 +347,10 @@ a:hover, a:focus {
   .project-item {
     width: 32%;
   }
+  .comment-contents {
+    margin-left: 5rem;
+  }
 }
-
 /* 
     ##Device = Tablets, Ipads
     ##Screen = 768px to 1025px
@@ -380,7 +370,6 @@ a:hover, a:focus {
     display: inline-block;
   }
 }
-
 /* 
     ##Device = Most of the Smartphones Mobiles 
     ##Screen = B/w 320px to 479px
@@ -391,7 +380,7 @@ a:hover, a:focus {
     min-height: 130px;
   }
   .content.active {
-    padding: 1px 1rem 1rem;
+    padding: 1px .5rem 1rem;
   }
   #content-nav {
     display: none;
@@ -425,6 +414,9 @@ a:hover, a:focus {
     word-wrap: break-word;
     display: -webkit-box;
   }
+  .comment-contents {
+    margin-left: 3.5rem;
+  }
   .read-more {
     display: none;
   }
@@ -450,7 +442,7 @@ a:hover, a:focus {
     border-radius: .5rem;
     padding: 1.5rem 0;
     line-height: 1rem;
-    font-size: 1rem;
+    font-size: .9rem;
     color: #636363;
   }
   #bottom-menu div a.active {

@@ -3,6 +3,7 @@
         'background: linear-gradient(to right, #5433ff, #20bdff, #a5fecb);',
         'color: #FFF',
         'padding: 15px 20px',
+        'font-family: Roboto',
         'font-size: 5rem',
         'font-weight: 700'
     ].join(';');

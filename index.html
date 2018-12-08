@@ -4,7 +4,9 @@
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
-        <title>Hello World :: jooonak</title>
+        <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+        <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+        <title>DEV :: Hello World</title>
               
         <link href="https://fonts.googleapis.com/css?family=Hi+Melody|Open+Sans&amp;subset=korean" rel="stylesheet">
         <link href="./normalize.css" rel="stylesheet"/>
@@ -21,10 +23,66 @@
                 margin-top: 3rem;
                 min-height: 5rem;
             }
+            .write-area {
+                text-align: left;
+                background-color: #F0F0F0;
+                padding: 1.5rem 2rem;
+                border-radius: 15px;
+            }
+            #comment-form textarea {
+                padding: .5rem;
+                width: 100%;
+                resize: none;
+                min-height: 100px;
+                border-radius: 10px;
+            }
+            .input-group {
+                margin-top: .3rem;
+            }
+            input[type="checkbox"] {
+                display: none;
+            }
+            input[type="checkbox"] + label {
+                display: inline-block;
+                vertical-align: middle;
+                margin-top: .5rem;
+                color: #666666;
+            }
+            input[type="checkbox"] + label::before {
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                width: 15px;
+                height: 15px;
+                margin-right: 5px;
+                border-radius: 5px;
+                background-color: #FFFFFF;
+            }
+            input[type="checkbox"]:checked + label::before {
+                color: #FFFFFF;
+                content: '\2713';
+                font-size: 12px;
+                font-weight: bold;
+                text-align: center;
+                line-height: 1rem;
+                background-color: #2CB5E8;
+            }
+            .comment-submit {
+                float: right;
+                color: #FFFFFF;
+                border-color: #2CB5E8;
+                border-radius: 18px;
+                background-color: #2CB5E8;
+            }
+            .comment-submit:hover,
+            .comment-submit:focus {
+                border-color: #2CB5D3;
+                background-color: #2CB5D3;
+            }
         </style>
     </head>
     <body>
-        <div id="wrapper" class="extended">
+        <div id="wrapper">
             <!-- Nav -->
             <nav class="main-header clearfix">
                 <div class="header-hamburger">
@@ -50,10 +108,10 @@
                         <a class="nav-item" href="#blog">Blog</a>
                     </div>
                     <div>
-                        <a class="nav-item active" href="#portfolio">Portfolio</a>
+                        <a class="nav-item" href="#portfolio">Portfolio</a>
                     </div>
                     <div>
-                        <a class="nav-item" href="#contact">Contact</a>
+                        <a class="nav-item active" href="#guestbook">Guestbook</a>
                     </div>
                 </nav>
 
@@ -178,7 +236,7 @@
                     </div>
                 </div>
 
-                <div id="portfolio" class="content active">
+                <div id="portfolio" class="content">
                     <div class="project-list">
                         <div class="project-item">
                             <div class="project-image">
@@ -248,8 +306,69 @@
                     </div>
                 </div>
 
-                <div id="contact" class="content">
-                    <h1> Contact </h1>
+                <div id="guestbook" class="content active">
+                    <h1> Guestbook </h1>
+                    <div class="write-area">
+                        <form id="comment-form">
+                            <textarea name="comment" tabindex="3" placeholder="인터넷은 우리가 함께 만들어가는 소중한 공간입니다. 댓글 작성 시 타인에 대한 배려와 책임을 담아주세요." ></textarea>
+                            <div class="input-group clearfix">
+                                <input type="checkbox" name="isSecret" id="isSecret">
+                                <label for="isSecret">비밀글 작성하기</label>
+                                <button type="submit" class="btn comment-submit">작성하기</button>
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="comment-list">
+                        <li class="comment clearfix">
+                            <picture>
+                                <source srcset="https://placeimg.com/70/70/animals" media="(min-width: 768px)">
+                                <source srcset="https://placeimg.com/45/45/animals">
+                                <img class="guest-image" src="https://placeimg.com/70/70/animals" alt="profile background image">
+                            </picture>
+                            <div class="comment-contents">
+                                <div class="guest-desc">
+                                    <span class="guest-name text-wrap">nickname</span>
+                                    <span class="write-date text-wrap">2018-12-09 01:40:00</span>
+                                </div>
+                                <p>
+                                    안녕하세요? 올라오는 여러 정보를 계속 보고 있는 사람입니다.
+                                    저는 우리나라에서 페어페이라는 간편공정결재시스템을 만드는 일과 함께 커먼즈관련하여 국제적 연대를 준비하고 있습니다.
+                                    네덜란드에 있는 p2p재단의 한국지부를 만들기 위해 재단설립자와 관련 활동가들 그리고 사단법인등과 함께 진행을 하고 있습니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="comment clearfix">
+                            <picture>
+                                <source srcset="https://placeimg.com/70/70/animals" media="(min-width: 768px)">
+                                <source srcset="https://placeimg.com/45/45/animals">
+                                <img class="guest-image" src="https://placeimg.com/70/70/animals" alt="profile background image">
+                            </picture>
+                            <div class="comment-contents secret">
+                                <div class="guest-desc">
+                                    <span class="write-date text-wrap">2018-12-09 01:40:01</span>
+                                </div>
+                                <p>
+                                    비밀글입니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="comment clearfix">
+                            <picture>
+                                <source srcset="https://placeimg.com/70/70/animals" media="(min-width: 768px)">
+                                <source srcset="https://placeimg.com/45/45/animals">
+                                <img class="guest-image" src="https://placeimg.com/70/70/animals" alt="profile background image">
+                            </picture>
+                            <div class="comment-contents">
+                                <div class="guest-desc">
+                                    <span class="guest-name text-wrap">nickname</span>
+                                    <span class="write-date text-wrap">2018-12-09 01:40:02</span>
+                                </div>
+                                <p>
+                                    냠냠냠샘~ ㅎㅎ냠냠냠보고 들어와봤습니다. 로렌스화이팅 아자
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <!-- /Main Contents -->
@@ -269,10 +388,10 @@
                 <a class="menu-item" href="#blog">Blog</a>
             </div>
             <div>
-                <a class="menu-item active" href="#portfolio">Portfolio</a>
+                <a class="menu-item" href="#portfolio">Portfolio</a>
             </div>
             <div>
-                <a class="menu-item" href="#contact">Contact</a>
+                <a class="menu-item active" href="#guestbook">Guestbook</a>
             </div>
         </nav>
         <!-- /Bottom fixed menu -->
