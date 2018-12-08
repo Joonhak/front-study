@@ -32,6 +32,7 @@
                 </div>
                 <div class="header-brand">
                     <h1 id="header-title">Blog - Hello World!</h1>
+                    <span class="blink"> </span>
                 </div>
                 <div class="header-menu">
 
@@ -280,11 +281,14 @@
         <script type="text/javascript">
             afterDocumentReady(function() {
                 typing( document.querySelector('#header-title') );
-                
+
                 addMenuClickEvent( document.querySelectorAll('.nav-item, .menu-item') );
-                document.querySelector('#post-category').addEventListener('click', toggleActiveClass);
-                document.querySelector('#background').addEventListener('click', toggleActiveClass);
+                document.querySelector('#post-category').addEventListener('click', addActiveAtCategoryList);
+                document.querySelector('#background').addEventListener('click', addActiveAtCategoryList);
             });
+            function addActiveAtCategoryList() {
+                toggleClass(document.getElementById('category-list'), 'active');
+            }
         </script>
     </body>
 </html>

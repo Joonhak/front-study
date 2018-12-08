@@ -12,6 +12,34 @@ a:hover, a:focus {
   color: #2cb5e8;
 }
 
+#header-title {
+  display: inline-block;
+}
+
+@keyframes blink {
+  0% { opacity: .1; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes blink {
+  0% { opacity: .1; }
+  100% { opacity: 1; }
+}
+
+.blink {
+  display: inline-block;
+  font-size: 2em;
+  color: #F1F1F1;
+  animation: blink .8s ease-in infinite;
+  -moz-animation: blink .8s ease-in infinite;
+  -o-animation: blink .8s ease-in infinite;
+  -webkit-animation: blink .8s ease-in infinite;
+}
+
+.blink::after {
+  content: '|';
+}
+
 #wrapper {
   max-width: 1400px;
   padding-left: 10px;
@@ -60,7 +88,7 @@ a:hover, a:focus {
 }
 
 .main-header {
-  padding: 10px;
+  padding: 10px 0;
   text-align: center;
 }
 

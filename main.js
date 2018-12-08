@@ -41,17 +41,14 @@ function getClassList(elem) {
     }
 }
 
-function toggleActiveClass(e) {
-    var elemToShowOrNot = document.getElementById('category-list')
-        , classList = getClassList( elemToShowOrNot )
-        , activeIndex = classList.length ? classList.indexOf('active') : -1;
-
-    if ( activeIndex > -1 ) {
-        classList.splice( activeIndex )
-        elemToShowOrNot.setAttribute('class', classList.join(' '));
+function toggleClass(elem, className) {
+    var classList = getClassList(elem)
+        , classIndex = classList.indexOf(className);
+    
+    if ( classIndex > -1 ) {
+        removeClass( elem, className );
     } else {
-        classList = classList.length ? classList.push(' active') : ['active'];
-        elemToShowOrNot.setAttribute('class', classList.join(' '));
+        addClass( elem, className );
     }
 }
 
@@ -70,7 +67,7 @@ function addMenuClickEvent(elemList) {
                     removeClass( activeElements[j], 'active' );
                 }
             }
-            
+
             addClass( this, 'active');
             addClass( elemToShow, 'active' );        
             changeMaxWidth( this.getAttribute('href') );

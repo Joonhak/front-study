@@ -10,32 +10,32 @@ window.typing = function(elem) {
             index: 0,
             str : '',
             timer: null,
-            state: function() {
+            state: function(data) {
                 return {
-                    text : data.text,
                     elem: data.elem,
+                    text : data.text,
                     textLength: data.text.length
                 }
             },
-            setHtml: function(data) {
+            setHtml: function(state) {
                 var _this = this;
-                if ( data.text && _this.index < data.textLength ) {
-                    _this.str += data.text.charAt(_this.index++);
-                    data.elem.innerText = _this.str;
+                if ( state.text && _this.index < state.textLength ) {
+                    _this.str += state.text.charAt(_this.index++);
+                    state.elem.innerText = _this.str;
                 } else {
                     _this.str = _this.str.slice(0, -1);
                     if ( !_this.str.length) {
                         _this.index = 0;
                     }
-                    data.elem.innerText = _this.str;
+                    state.elem.innerText = _this.str;
                 } 
             },
             init: function(data) {
                 var _this = this;
                 
                 _this.timer = setInterval(function(){
-                    _this.setHtml(_this.state());
-                }, 200);
+                    _this.setHtml(_this.state(data));
+                }, 250);
             }
         }
         typing.init(data);
