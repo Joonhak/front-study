@@ -9,6 +9,41 @@ a:link, a:visited {
 a:hover, a:focus {
   color: #2cb5e8;
 }
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + label {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: .5rem;
+  color: #666666;
+}
+input[type="checkbox"] + label::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+input[type="checkbox"]:checked + label::before {
+  color: #FFFFFF;
+  content: '\2713';
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1rem;
+  background-color: #2CB5E8;
+}
+textarea {
+  padding: .5rem;
+  width: 100%;
+  resize: none;
+  min-height: 100px;
+  border-radius: 10px;
+}
 #header-title {
   display: inline-block;
 }
@@ -242,11 +277,35 @@ a:hover, a:focus {
 .project-name {
   font-size: 1.5rem;
 }
+.write-area {
+  text-align: left;
+  background-color: #F0F0F0;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+}
+#comment-form textarea {
+  border-color: #F3F3F3;
+}
+.input-group {
+  margin-top: .3rem;
+}
+.comment-submit {
+  float: right;
+  color: #FFFFFF;
+  border-color: #2CB5E8;
+  border-radius: 18px;
+  background-color: #2CB5E8;
+}
+.comment-submit:hover,
+.comment-submit:focus {
+  border-color: #2CB5D3;
+  background-color: #2CB5D3;
+}
 .comment {
   padding: 1rem;
+  margin-bottom: 1rem;
   border-radius: 15px;
   box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, .2);
-  margin-bottom: 1rem;
 }
 .comment-list {
   text-align: left;
