@@ -23,6 +23,11 @@
                 margin-top: 3rem;
                 min-height: 5rem;
             }
+            .read-more:hover {
+                color: #FFFFFF;
+                background-color: #2CB5E8;
+                border: 1px solid #2CB5E8;
+            }
         </style>
     </head>
     <body>
@@ -46,7 +51,7 @@
             <div class="main">
                 <nav id="content-nav" class="">
                     <div>
-                        <a class="nav-item" href="#about">About</a>
+                        <a class="nav-item active" href="#about">About</a>
                     </div>
                     <div>
                         <a class="nav-item" href="#blog">Blog</a>
@@ -55,11 +60,11 @@
                         <a class="nav-item" href="#portfolio">Portfolio</a>
                     </div>
                     <div>
-                        <a class="nav-item active" href="#guestbook">Guestbook</a>
+                        <a class="nav-item" href="#guestbook">Guestbook</a>
                     </div>
                 </nav>
 
-                <div id="about" class="content">
+                <div id="about" class="content active">
                     <div class="about-images">
                         <picture>
                             <source srcset="https://placeimg.com/1200/350/nature" media="(min-width: 768px)">
@@ -253,7 +258,7 @@
                     </div>
                 </div>
 
-                <div id="guestbook" class="content active">
+                <div id="guestbook" class="content">
                     <h1> Guestbook </h1>
                     <div class="write-area">
                         <form id="comment-form">
@@ -335,7 +340,7 @@
         <!-- Bottom fixed menu -->
         <nav id="bottom-menu">
             <div>
-                <a class="menu-item" href="#about">About</a>
+                <a class="menu-item active" href="#about">About</a>
             </div>
             <div>
                 <a class="menu-item" href="#blog">Blog</a>
@@ -344,7 +349,7 @@
                 <a class="menu-item" href="#portfolio">Portfolio</a>
             </div>
             <div>
-                <a class="menu-item active" href="#guestbook">Guestbook</a>
+                <a class="menu-item" href="#guestbook">Guestbook</a>
             </div>
         </nav>
         <!-- /Bottom fixed menu -->
