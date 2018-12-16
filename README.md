@@ -2,12 +2,12 @@
 
 ## Goal  
 * Building a blog using only html, css, vanilla javascript  
-* Spring boot back-end ( not now )
 * Menu  
     - About  
     - Blog  
     - Portfolio link  
-    - Contact method
+    - ~~Contact method~~ -> Guestbook  
+* Spring boot back-end ( not now )
 * Additional feature  
     - Authentication with spring-security  
-    - If possible, implemet OAuth2
+    - If possible, implemet OAuth2  
