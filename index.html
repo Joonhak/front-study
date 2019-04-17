@@ -354,18 +354,15 @@
         </nav>
         <!-- /Bottom fixed menu -->
         <script type="text/javascript" src="main.js"></script>
-        <script type="text/javascript" src="typing.js"></script>
+        <script type="text/javascript" src="typer.js"></script>
         <script type="text/javascript">
             afterDocumentReady(function() {
-                typing( document.querySelector('#header-title') );
+                typer.init(document.querySelector('#header-title'));
 
                 addMenuClickEvent( document.querySelectorAll('.nav-item, .menu-item') );
                 document.querySelector('#post-category').addEventListener('click', addActiveAtCategoryList);
                 document.querySelector('#background').addEventListener('click', addActiveAtCategoryList);
             });
-            function addActiveAtCategoryList() {
-                toggleClass(document.getElementById('category-list'), 'active');
-            }
         </script>
     </body>
 </html>

@@ -7,7 +7,3 @@
     - Blog  
     - Portfolio link  
     - ~~Contact method~~ -> Guestbook  
-* Spring boot back-end ( not now )
-* Additional feature  
-    - Authentication with spring-security  
-    - If possible, implemet OAuth2  

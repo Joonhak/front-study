@@ -18,6 +18,10 @@ function afterDocumentReady(fn) {
     }, false);
 }
 
+function addActiveAtCategoryList() {
+    toggleClass(document.getElementById('category-list'), 'active');
+}
+
 function addClass( elem, className ) {
     elem.className += ' ' + className;
     return elem;
