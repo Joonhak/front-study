@@ -1,9 +1,9 @@
 # Repository for front-end study.  
 
 ## Goal  
-* Building a blog using only html, css, vanilla javascript  
-* Menu  
-    - About  
-    - Blog  
-    - Portfolio link  
-    - ~~Contact method~~ -> Guestbook  
+- [x] Building a blog using only html, css, vanilla javascript (without library)  
+- [x] Menu  
+    - [x] About  
+    - [x] Blog  
+    - [x] Portfolio link  
+    - [x] ~~Contact method~~ -> Guestbook  
